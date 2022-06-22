@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+/*=============== Backgroud Snake Way ===============*/
+
+.snakemaps{
+    width: 100%;
+    height: 100%;
+}
+
+/* #pulos{
+    position: absolute;
+} */
+
+/*=============== Esfera do Dragão ===============*/
+
+.esfera-game {
+    position: absolute;
+    width: 60px;
+    right: -60px;
+    padding-bottom: 90px;
+    bottom: 0;
+    z-index: 10;
+}
+
+.esfera-animation {
+    animation: kaio-animation 2.5s infinite linear;
+
+}
+
+@keyframes esfera-animation {
+    from {
+        right: -60px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+/*Mestre Kaio */
+.kaio {
+    position: absolute;
+    bottom: 0;
+    width: 75px;
+    right: -160px;
+    padding-bottom: 95px;
+}
+
+.kaio-animation{
+    animation: kaio-animation 3s infinite linear;
+}
+
+@keyframes kaio-animation {
+    from{
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+    
+}
+
+/*=============== Goku ===============*/
+
+.goku {
+    width: 120px;
+    position: absolute;
+    bottom: 0;
+    margin-left: 100px;
+    padding-bottom: 90px;
+    z-index: 10;
+}
+
+.jump{
+    animation: goku-animation 500ms ease-out;
+}
+
+@keyframes goku-animation{
+    0%{
+        bottom: 0px;
+    }
+    45%{
+        bottom: 150px
+    }
+    55%{
+        bottom: 160px;
+    }
+    100%{
+        bottom:0px;
+    }
+    
+}
+
+
+/*=============== Nuvens ===============*/
+
+.cloud-game{
+    position: absolute;
+    width: 550px;
+    padding-top: 50px;
+    z-index: 4;
+    animation: clouds-animation 20s infinite linear;
+}
+
+.cloud-game2{
+    position: absolute;
+    width: 270px;
+    padding-top: 150px;
+    z-index: 3;
+    animation: clouds-animation 30s infinite linear;
+}
+
+.cloud-game3{
+    position: absolute;
+    width: 150px;
+    padding-top: 300px;
+    z-index: 2;
+    animation: clouds-animation 55s infinite linear;
+}
+
+@keyframes clouds-animation {
+    from{
+        right: -550px;
+    }
+    to{
+        right:  100%;
+    }
+}
+
+@keyframes clouds-animation2 {
+    from{
+        right: -1300px;
+    }
+    to{
+        right:  100%;
+    }
+}
+
+@keyframes clouds-animation3 {
+    from{
+        right: -250px;
+    }
+    to{
+        right:  100%;
+    }
+}
+
