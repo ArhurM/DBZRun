@@ -4,8 +4,7 @@ kaio = document.querySelector('.kaio');
 textStart = document.querySelector('text-start');
 audioStart = new Audio('./audio/dbztheme.mp3');
 audioGameOver = new Audio('./audio/dbzgameover.mp3');
-// let pulos = document.getElementById('pulos');
-// let counter = 0
+
 
 
 /*================ Função Start ===================*/ 
@@ -27,51 +26,63 @@ const start = () => {
 }
 
 document.addEventListener('keydown', start);
-document.addEventListener("click", start);
+document.addEventListener('click', start);
 
 /*================ Função Pulo ===================*/ 
 
-const jump = () => {
-  goku.classList.add('jump');
+// const jump = () => {
+//   goku.classList.add('jump');
 
-  setTimeout(() => {
-      goku.classList.remove('jump');
-  }, 500); 
-}
-
-document.addEventListener('keydown', jump);
-document.addEventListener("click", jump);
-
-
-/*================ recorde jumps ===================*/
-
-// const jump = () =>{
-//     goku.classList.add("jump");
-//     setTimeout(() =>{
-//         counter++;
-//         pulos.innerHTML = counter;
-//         goku.classList.remove("jump");
-//     },500);
-
-   
+//   setTimeout(() => {
+//       goku.classList.remove('jump');
+//   }, 500); 
 // }
 
 // document.addEventListener('keydown', jump);
+// document.addEventListener("click", jump);
 
-// if (pulos >= 3) {
-//   kaio.src = './images/pilaf.png';
-//   kaio.style.width = '75px';
-//   kaio.style.marginLeft = '50px';
-// } else if (pulos >= 10){
-//   kaio.src = './images/bubble.png';
-//   kaio.style.width = '75px';
-//   kaio.style.marginLeft = '50px';
-// } else {
-//   kaio.src = './images/fantasma.png';
-//   kaio.style.width = '75px';
-//   kaio.style.marginLeft = '50px';
-  
-// }     
+
+/*================ Score jumps ===================*/
+
+pulos = document.getElementById('pulos');
+counter = 0
+
+const jump = () =>{
+    goku.classList.add('jump');
+    setTimeout(() =>{
+        counter++;
+        pulos.innerHTML = counter;
+        goku.classList.remove("jump");
+    },500);   
+}
+
+document.addEventListener('keydown', jump);
+document.addEventListener('click', jump);
+
+const score = setInterval(() => {
+ 
+  if (counter >= 10) {
+    kaio.src = './images/bubble.png';
+    kaio.style.width = '75px';
+    kaio.style.marginLeft = '50px';
+    kaioAnimation();
+  } else if (counter >= 20){
+    kaio.src = './images/kaio.png';
+    kaio.style.width = '75px';
+    kaio.style.marginLeft = '50px';
+  } 
+  else if(counter >= 30){
+    kaio.src = './images/vogohan.png';
+    kaio.style.width = '75px'
+    kaio.style.marginLeft = '50px';
+  }     
+  else {
+    kaio.src = './images/gregory.png';
+    kaio.style.width = '75px'
+    kaio.style.marginLeft = '50px';
+  }     
+}, 10);
+
 
 /*================ Código para acabar o jogo ===================*/ 
 
@@ -80,7 +91,7 @@ const checkGameOver = setInterval(() => {
   const gokuPosition = +window.getComputedStyle(goku).bottom.replace('px', '');
   const kaioPosition = kaio.offsetLeft;
  
-      if (esferaPosition <= 100 && esferaPosition > 0 && gokuPosition < 60 ) {
+      if (esferaPosition <= 155 && esferaPosition > 60 && gokuPosition < 60 ) {
 
           esfera.style.animation = 'none';
           esfera.style.left = `${esferaPosition}px`;

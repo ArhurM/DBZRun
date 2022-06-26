@@ -12,7 +12,7 @@
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
+    /* background: linear-gradient(#87CEEB, #E0F6FF); */
 }
 
 /*=============== Backgroud Snake Way ===============*/
@@ -22,9 +22,10 @@
     height: 100%;
 }
 
-/* #pulos{
+#pulos{
     position: absolute;
-} */
+    z-index: 10;
+}
 
 /*=============== Esfera do Dragão ===============*/
 
@@ -32,6 +33,7 @@
     position: absolute;
     width: 60px;
     right: -60px;
+    left: 100;
     padding-bottom: 90px;
     bottom: 0;
     z-index: 10;
@@ -61,7 +63,7 @@
 }
 
 .kaio-animation{
-    animation: kaio-animation 3s infinite linear;
+    animation: kaio-animation 3s 2 linear;
 }
 
 @keyframes kaio-animation {
@@ -159,3 +161,48 @@
     }
 }
 
+/*=============== Responsividade ===============*/
+
+@media screen and (max-width: 375px) {
+    .snakemaps{
+        width: 100%;
+        height: 100%;
+    }
+
+    .goku {
+        padding-bottom: 75px;
+    
+    }
+    .esfera-game {
+        padding-bottom: 75px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .snakemaps{
+        width: 100%;
+        height: 100%;
+    }
+
+    .goku {
+        padding-bottom: 70px;
+    }   
+    .esfera-game {
+        padding-bottom: 70px;
+    }
+}
+
+@media screen and (max-width: 768px) and
+(max-width: 813px) {
+    .snakemaps{
+        width: 100%;
+        height: 100%;
+    }
+
+    .goku {
+        padding-bottom: 70px;
+    }   
+    .esfera-game {
+        padding-bottom: 70px;
+    }
+}
