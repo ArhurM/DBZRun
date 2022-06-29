@@ -22,10 +22,25 @@
     height: 100%;
 }
 
-#pulos{
+.score-container {
+    position:absolute;
+    width: 200px;
+    height: 40px;
+    font-size: 26px;
+    color: black;
+    z-index: 10;
+
+  
+}
+
+.score{
     position: absolute;
     z-index: 10;
+    font-size: 28px;
+    color: black;
+    font-weight: 900;
 }
+
 
 /*=============== Esfera do Dragão ===============*/
 
